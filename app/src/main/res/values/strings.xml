@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Photo Video Maker</string>
+    <string name="title_photo_album">Photos</string>
+    <string name="title_video_album">My Album</string>
+</resources>
