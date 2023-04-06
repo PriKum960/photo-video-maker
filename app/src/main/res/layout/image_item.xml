@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aman043358.photovideomaker.views.ScaleCardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10.0dip"
+    android:layout_marginLeft="4.0dip"
+    android:layout_marginTop="4.0dip"
+    android:layout_marginRight="4.0dip"
+    android:layout_marginBottom="2.0dip"
+    android:orientation="vertical"
+    app:aspectRatioHeight="1"
+    app:aspectRatioWidth="1"
+    app:cardCornerRadius="2.0dip"
+    app:cardElevation="4.0dip">
+
+    <ImageView
+        android:id="@+id/ivFirstImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+
+    <RelativeLayout
+        android:id="@+id/ivSelected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#50000000"
+        android:fadingEdge="horizontal"
+        android:gravity="center" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_tick"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</com.aman043358.photovideomaker.views.ScaleCardLayout>

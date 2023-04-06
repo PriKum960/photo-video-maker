@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aman043358.photovideomaker.views.ScaleCardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10.0dip"
+    android:layout_marginLeft="4.0dip"
+    android:layout_marginTop="4.0dip"
+    android:layout_marginRight="4.0dip"
+    android:layout_marginBottom="2.0dip"
+    android:orientation="vertical"
+    app:aspectRatioHeight="1"
+    app:aspectRatioWidth="1"
+    app:cardCornerRadius="2.0dip"
+    app:cardElevation="4.0dip">
+
+    <ImageView
+        android:id="@+id/ivFirstImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop" />
+
+    <CheckBox
+        android:id="@+id/cbSelect"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/ivFirstImage"
+        android:background="@drawable/bg_selection"
+        android:button="@null"
+        android:checked="false" />
+
+    <TextView
+        android:id="@+id/tvFolderName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#50000000"
+        android:ellipsize="marquee"
+        android:fadingEdge="horizontal"
+        android:gravity="center"
+        android:singleLine="true"
+        tools:text="album"
+        android:textColor="@android:color/white"
+        android:textSize="14.0sp" />
+
+</com.aman043358.photovideomaker.views.ScaleCardLayout>
