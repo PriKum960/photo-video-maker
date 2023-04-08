@@ -29,7 +29,20 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvImageAlbum"
+            android:overScrollMode="never"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/red_500"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@drawable/ic_next" />
     </RelativeLayout>
 </LinearLayout>

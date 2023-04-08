@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aman043358.photovideomaker.databinding.ImageItemBinding
 import com.aman043358.photovideomaker.databinding.ItemBinding
 import com.aman043358.photovideomaker.model.Image
+import com.aman043358.photovideomaker.utils.Utils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
@@ -32,17 +33,15 @@ class ImageAdapter(
         fun bind(image: Image) {
             Glide.with(binding.root).load(image.path).apply(RequestOptions().centerCrop())
                 .into(binding.ivFirstImage)
-            binding.ivSelected.visibility = View.GONE
             binding.ivFirstImage.setOnClickListener {
-                if (binding.ivSelected.visibility == View.VISIBLE)
+                if (binding.ivSelected.visibility == View.VISIBLE) {
                     binding.ivSelected.visibility = View.GONE
-                else
+                    Utils.images.remove(image)
+                } else {
                     binding.ivSelected.visibility = View.VISIBLE
+                    Utils.images.add(image)
+                }
             }
         }
-    }
-
-    interface OnImageClickListener {
-        fun clicked(folder: Image, position: Int)
     }
 }

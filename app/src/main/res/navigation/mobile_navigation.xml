@@ -3,18 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_photo">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_photo"
         android:name="com.aman043358.photovideomaker.fragments.ImageSelectionFragment"
         android:label="@string/title_photo_album"
-        tools:layout="@layout/fragment_image_selection" />
+        tools:layout="@layout/fragment_image_selection" >
+        <action
+            android:id="@+id/action_navigation_photo_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_album"
         android:name="com.aman043358.photovideomaker.fragments.VideoAlbumFragment"
         android:label="@string/title_video_album"
         tools:layout="@layout/fragment_video_album" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.aman043358.photovideomaker.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result" />
 
 </navigation>

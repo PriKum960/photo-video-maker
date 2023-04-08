@@ -2,4 +2,8 @@
     <string name="app_name">Photo Video Maker</string>
     <string name="title_photo_album">Photos</string>
     <string name="title_video_album">My Album</string>
+    <string name="description">Easily create videos with your photos \nusing this user-friendly app.</string>
+    <string name="permission">Give permission to get started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

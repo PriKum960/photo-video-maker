@@ -1,14 +1,19 @@
 package com.aman043358.photovideomaker.fragments
 
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aman043358.photovideomaker.R
 import com.aman043358.photovideomaker.adapter.FolderAdapter
 import com.aman043358.photovideomaker.adapter.ImageAdapter
 import com.aman043358.photovideomaker.databinding.FragmentImageSelectionBinding
@@ -27,7 +32,19 @@ class ImageSelectionFragment : Fragment(), FolderAdapter.OnImageFolderClickListe
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentImageSelectionBinding.inflate(inflater, container, false)
-
+        binding.fab.setColorFilter(
+            ContextCompat.getColor(requireContext(), R.color.white),
+            PorterDuff.Mode.SRC_IN
+        )
+        binding.fab.setOnClickListener {
+            if (Utils.images.size < 3){
+                Toast.makeText(requireContext(), "Cannot select less than 3", Toast.LENGTH_SHORT).show()
+            }else{
+                findNavController().navigate(
+                    R.id.action_navigation_photo_to_resultFragment
+                )
+            }
+        }
         return binding.root
     }
 

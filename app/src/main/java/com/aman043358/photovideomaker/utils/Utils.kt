@@ -9,6 +9,7 @@ import com.aman043358.photovideomaker.model.Folder
 object Utils {
 
     var allAlbum = HashMap<Folder, List<Image>>()
+    var images = mutableSetOf<Image>()
 
     fun init(ctx: Context) {
         val picPaths = ArrayList<String>()

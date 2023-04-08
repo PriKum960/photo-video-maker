@@ -12,24 +12,27 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import java.io.File
 
-class MyAlbumAdapter(val pathArr: ArrayList<String>): RecyclerView.Adapter<MyAlbumAdapter.ViewHolder>() {
+class MyAlbumAdapter(val pathArr: ArrayList<String>) :
+    RecyclerView.Adapter<MyAlbumAdapter.ViewHolder>() {
 
 
-
-    inner class ViewHolder(val binding: MyAlbumItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(pos: Int){
+    inner class ViewHolder(val binding: MyAlbumItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(pos: Int) {
             Glide.with(binding.root)
-                .load( File(pathArr[pos]) )
+                .load(File(pathArr[pos]))
                 .apply(RequestOptions().centerCrop())
-                .placeholder(R.drawable.ic_placeholder)
-                .error(R.drawable.ic_error_image)
                 .into(binding.iv)
 
             binding.tv.text = File(pathArr[pos]).name
             binding.root.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW)
-                intent.setDataAndType(Uri.parse(pathArr[pos] ),"video/*")
-                startActivity(binding.root.context,Intent.createChooser(intent,"play video using"),null)
+                intent.setDataAndType(Uri.parse(pathArr[pos]), "video/*")
+                startActivity(
+                    binding.root.context,
+                    Intent.createChooser(intent, "play video using"),
+                    null
+                )
             }
         }
 
@@ -38,8 +41,7 @@ class MyAlbumAdapter(val pathArr: ArrayList<String>): RecyclerView.Adapter<MyAlb
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
 
-
-        val binding = MyAlbumItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = MyAlbumItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding = binding)
     }
 
